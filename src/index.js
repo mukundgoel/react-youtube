@@ -1,5 +1,5 @@
 
-import _ from 'lodash';
+import debounce from 'lodash/debounce';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import YTSearch from 'youtube-api-search';
@@ -32,7 +32,7 @@ class App extends Component {
   }
 
  render() {
-   const videoSearch = _.debounce((term) => {
+   const videoSearch = debounce((term) => {
      this.videoSearch(term)}, 500);
 
    return (
